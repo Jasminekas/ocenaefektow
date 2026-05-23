@@ -1,1 +1,267 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocena Efektów Polityk Publicznych - Warsztaty</title>
+    <style>
+        :root {
+            --bg-color: #1a1a1a;
+            --card-bg: #262626;
+            --accent-color: #ff6b35;
+            --text-main: #ffffff;
+            --text-muted: #a6a6a6;
+        }
 
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .slide {
+            display: none;
+            height: 100vh;
+            padding: 60px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            position: relative;
+        }
+
+        .slide.active { display: flex; animation: fadeIn 0.5s ease-in-out; }
+
+        h1 { font-size: 3.5rem; color: var(--accent-color); margin-bottom: 20px; line-height: 1.2; }
+        h2 { font-size: 2.5rem; margin-bottom: 20px; color: var(--text-main); border-left: 5px solid var(--accent-color); padding-left: 15px; }
+        p { font-size: 1.5rem; color: var(--text-muted); margin-bottom: 30px; line-height: 1.6; max-width: 80%; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; width: 100%; margin-top: 20px; }
+        .card { background: var(--card-bg); padding: 30px; border-radius: 8px; border-bottom: 4px solid transparent; transition: all 0.3s; }
+        .card:hover { border-bottom-color: var(--accent-color); transform: translateY(-5px); }
+        .card h3 { font-size: 1.5rem; margin-bottom: 10px; color: var(--accent-color); }
+        .card p { font-size: 1.1rem; margin-bottom: 0; max-width: 100%; }
+
+        .exercise-box { background: rgba(255, 107, 53, 0.1); border: 2px dashed var(--accent-color); padding: 30px; border-radius: 8px; width: 100%; }
+        .exercise-box h3 { color: var(--accent-color); font-size: 1.8rem; margin-bottom: 15px; }
+
+        .footer { position: absolute; bottom: 30px; left: 60px; right: 60px; display: flex; justify-content: space-between; color: var(--text-muted); font-size: 1rem; }
+        
+        .controls { position: absolute; bottom: 30px; right: 60px; z-index: 10; display: flex; gap: 10px; }
+        .btn { background: var(--card-bg); color: var(--text-main); border: 1px solid var(--text-muted); padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        .btn:hover { background: var(--accent-color); border-color: var(--accent-color); }
+
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
+    </style>
+</head>
+<body>
+
+    <!-- Slajd 1 -->
+    <div class="slide active">
+        <h1>Ocena Efektów Polityk Publicznych</h1>
+        <p>Jak mądrze projektować, mierzyć i ewaluować działania publiczne, aby opierać się na faktach, a nie na opiniach.</p>
+        <div class="card" style="margin-top: 40px; width: 100%;">
+            <h3>Plan dzisiejszych warsztatów (09:00 - 13:00)</h3>
+            <p style="font-size: 1.2rem; margin-top: 10px;">Blok 1: Logika Interwencji | Blok 2: Kryteria i Wskaźniki | Blok 3: Metodologia i Kontrfaktyczność | Blok 4: Ewaluacja w Praktyce</p>
+        </div>
+    </div>
+
+    <!-- Slajd 2 -->
+    <div class="slide">
+        <h2>Blok 1: Czym jest Polityka Publiczna?</h2>
+        <p>To celowe działanie władz publicznych (rządu, samorządu) nakierowane na rozwiązanie konkretnego problemu społecznego lub gospodarczego.</p>
+        <div class="grid">
+            <div class="card">
+                <h3>Problem</h3>
+                <p>Wysoka liczba wypadków drogowych z udziałem pieszych w mieście.</p>
+            </div>
+            <div class="card">
+                <h3>Interwencja</h3>
+                <p>Program doświetlania przejść i budowy progów zwalniających.</p>
+            </div>
+            <div class="card">
+                <h3>Ewaluacja</h3>
+                <p>Sprawdzenie, czy po roku liczba wypadków faktycznie spadła.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slajd 3 -->
+    <div class="slide">
+        <h2>Łańcuch Logiki Interwencji</h2>
+        <p>Zanim ocenisz efekt, musisz zrozumieć proces. Każdy program dzieli się na 5 etapów:</p>
+        <div class="grid">
+            <div class="card"><h3>1. Nakłady</h3><p>Budżet, urzędnicy, czas.</p></div>
+            <div class="card"><h3>2. Działania</h3><p>Organizowanie przetargów, budowa.</p></div>
+            <div class="card"><h3>3. Produkty</h3><p>20 wybudowanych przejść dla pieszych.</p></div>
+            <div class="card"><h3>4. Rezultaty</h3><p>Kierowcy zwalniają przed pasami.</p></div>
+            <div class="card"><h3>5. Wpływ</h3><p>Spadek śmiertelności o 40% w 3 lata.</p></div>
+        </div>
+    </div>
+
+    <!-- Slajd 4 -->
+    <div class="slide">
+        <h2>Ćwiczenie 1: Rozbicie na czynniki pierwsze</h2>
+        <div class="exercise-box">
+            <h3>Zadanie dla grupy (Czas: 15 minut)</h3>
+            <p>Wybierzcie jednego lidera, który będzie zapisywał Wasze pomysły na tablicy/flipcharcie. Przeanalizujcie program: <strong>"Miejskie rowery publiczne jako alternatywa dla samochodów"</strong>.</p>
+            <p>Rozpiszcie na tablicy jego strukturę: Co w tym programie jest <strong>Produktem</strong>, co <strong>Rezultatem</strong>, a co długofalowym <strong>Wpływem (Impactem)</strong>?</p>
+            <p><em>Po zakończeniu czasu lider grupy przeczyta mi Wasze wnioski przez mikrofon.</em></p>
+        </div>
+    </div>
+
+    <!-- Slajd 5 -->
+    <div class="slide">
+        <h2>Blok 2: Kryteria Ewaluacji (Standard OECD/DAC)</h2>
+        <p>Jakimi kategoriami posługują się profesjonalni badacze na całym świecie?</p>
+        <div class="grid">
+            <div class="card"><h3>Trafność</h3><p>Czy program odpowiada na realne, zdiagnozowane potrzeby obywateli?</p></div>
+            <div class="card"><h3>Skuteczność</h3><p>W jakim stopniu zrealizowano założone na początku cele?</p></div>
+            <div class="card"><h3>Efektywność</h3><p>Czy koszty były adekwatne do uzyskanych efektów? (Value for Money)</p></div>
+            <div class="card"><h3>Trwałość</h3><p>Czy efekty przetrwają, gdy skończy się finansowanie z programu?</p></div>
+        </div>
+    </div>
+
+    <!-- Slajd 6 -->
+    <div class="slide">
+        <h2>Jak tworzyć wskaźniki, które nie kłamią?</h2>
+        <p>Wskaźnik musi być mierzalny, obiektywny i powiązany z celem.</p>
+        <div class="grid">
+            <div class="card">
+                <h3>Wskaźniki Ilościowe</h3>
+                <p>Liczba uczestników, procentowy spadek bezrobocia, kwota oszczędności.</p>
+            </div>
+            <div class="card">
+                <h3>Wskaźniki Jakościowe</h3>
+                <p>Poziom satysfakcji mieszkańców (skala 1-5), poczucie bezpieczeństwa w dzielnicy.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slajd 7 -->
+    <div class="slide">
+        <h2>Ćwiczenie 2: Klinika Wskaźników</h2>
+        <div class="exercise-box">
+            <h3>Zadanie dla grupy (Czas: 25 minut)</h3>
+            <p>Oto fatalnie zaprojektowany cel publiczny: <strong>"Chcemy poprawić dobrostan psychiczny i aktywizować seniorów w naszym mieście poprzez organizację warsztatów i spotkań"</strong>.</p>
+            <p>Zadanie dla Was: Przekształćcie ten cel w standard <strong>SMART</strong> oraz zaproponujcie na tablicy 3 konkretne wskaźniki sukcesu: 1 produktowy, 1 ilościowy rezultatowy oraz 1 jakościowy.</p>
+        </div>
+    </div>
+
+    <!-- Slajd 8 -->
+    <div class="slide">
+        <h2>Blok 3: Święty Graal Ewaluacji – Kontrfaktyczność</h2>
+        <p>Kluczowe pytanie brzmi: Co wydarzyłoby się, gdybyśmy NIE wprowadzili naszej polityki publicznej?</p>
+        <div class="grid">
+            <div class="card">
+                <h3>Efekt Netto</h3>
+                <p>To realna zmiana wywołana <strong>wyłącznie</strong> naszym programem.</p>
+            </div>
+            <div class="card">
+                <h3>Błąd Selekcji</h3>
+                <p>Przypisywanie sukcesu programowi, podczas gdy uczestnicy poradziliby sobie sami (byli najbardziej przedsiębiorczy).</p>
+            </div>
+            <div class="card">
+                <h3>Grupa Kontrolna</h3>
+                <p>Porównanie osób objętych wsparciem z identyczną grupą, która wsparcia nie otrzymała.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slajd 9 -->
+    <div class="slide">
+        <h2>Ćwiczenie 3: Projektowanie Badania</h2>
+        <div class="exercise-box">
+            <h3>Zadanie dla grupy (Czas: 20 minut)</h3>
+            <p><strong>Case study:</strong> Urząd Pracy wdrożył program dotacji (20 tys. zł) na otwarcie własnej firmy dla osób bezrobotnych. Po roku 85% tych firm nadal działa. Urząd ogłasza gigantyczny sukces.</p>
+            <p>Przedyskutujcie w grupie: Czy to na pewno sukces programu? Jakie inne czynniki mogły na to wpłynąć? Jak zaprojektowalibyście badanie, by dowieść prawdy? (Zapiszcie punkty na flipcharcie).</p>
+        </div>
+    </div>
+
+    <!-- Slajd 10 -->
+    <div class="slide">
+        <h2>Blok 4: Ewaluacja w Praktyce i Rola Decydenta</h2>
+        <p>Kiedy oceniamy i po co to robimy?</p>
+        <div class="grid">
+            <div class="card">
+                <h3>Ex-ante</h3>
+                <p>Przed startem. Szacowanie skutków regulacji (OSR). Czy to ma sens?</p>
+            </div>
+            <div class="card">
+                <h3>Mid-term</h3>
+                <p>W trakcie. Sprawdzamy, co nie działa i korygujemy kurs rządu/samorządu.</p>
+            </div>
+            <div class="card">
+                <h3>Ex-post</h3>
+                <p>Po zakończeniu. Rozliczenie, wyciągnięcie wniosków (Policy Learning) na przyszłość.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slajd 11 -->
+    <div class="slide">
+        <h2>Ćwiczenie 4: Gra Fabularna "Trudny Raport"</h2>
+        <div class="exercise-box">
+            <h3>Zadanie dla grupy (Czas: 25 minut)</h3>
+            <p>Wyobraźcie sobie, że jesteście zespołem niezależnych ekspertów. Wasz raport z ewaluacji programu "Cyfrowa Szkoła" (zakup tabletów za miliony) wykazał, że tablety nie poprawiły ocen, a dzieci używały ich do gier.</p>
+            <p>Ja za chwilę wcielę się przez audio w rolę <strong>wściekłego Burmistrza</strong>, który wydał na to pieniądze i boi się afery w mediach. Wybierzcie 2 reprezentantów, którzy za chwilę przez mikrofon będą musieli obronić wnioski z raportu i przekonać mnie do wdrożenia zmian, a nie wyrzucenia raportu do kosza.</p>
+        </div>
+    </div>
+
+    <!-- Slajd 12 -->
+    <div class="slide">
+        <h2>Podsumowanie Warsztatów</h2>
+        <p>Ewaluacja to nie kontrola mająca ukarać winnych. Ewaluacja to mechanizm uczenia się struktur publicznych.</p>
+        <div class="grid">
+            <div class="card">
+                <h3>Zasada na dziś:</h3>
+                <p>Dobry lider opiera decyzje na dowodach (Evidence-Based Policy), a nie na intuicji politycznej.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <span>Ocena Efektów Polityk Publicznych</span>
+        <span id="slide-num">Slajd 1 / 12</span>
+    </div>
+
+    <div class="controls">
+        <button class="btn" id="prevBtn">Poprzedni</button>
+        <button class="btn" id="nextBtn">Następny</button>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const slideNum = document.getElementById('slide-num');
+        let currentSlide = 0;
+
+        function updateSlide() {
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === currentSlide);
+            });
+            slideNum.textContent = `Slajd ${currentSlide + 1} / ${slides.length}`;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < slides.length - 1) { currentSlide++; updateSlide(); }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) { currentSlide--; updateSlide(); }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                if (currentSlide < slides.length - 1) { currentSlide++; updateSlide(); }
+            }
+            if (e.key === 'ArrowLeft') {
+                if (currentSlide > 0) { currentSlide--; updateSlide(); }
+            }
+        });
+    </script>
+</body>
+</html>
